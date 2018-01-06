@@ -13,6 +13,7 @@ public class Knight extends ChessPiece{
          board.board[this.position.x][this.position.y] = this;   
     }
     Pos[] possibleMoves(ChessBoard board){
+    	System.out.print("test");
         Pos[] valid = new Pos[8];
         int nullCounter = 0;
         valid[0] = new Pos(position.x+2,position.y-1);
@@ -33,9 +34,10 @@ public class Knight extends ChessPiece{
         for(int i = 0,j = 0;i<possibleMoves.length;i++, j++) {
             while(valid[j]==null)j++;
             possibleMoves[i] = new Pos(valid[j].x,valid[j].y);
-            board.board[valid[i].x][valid[i].y].position.hasPiece=board.board[valid[i].x][valid[i].y]!=null&&(board.board[valid[i].x][valid[i].y].isWhite!=isWhite);        
+                board.board[possibleMoves[i].x][possibleMoves[i].y].position.hasPiece = board.board[possibleMoves[i].x][possibleMoves[i].y]!=null;//&&(board.board[valid[i].x][valid[i].y].isWhite!=isWhite);     
         }
         return possibleMoves;
     }
     public String toString(){return isWhite ? "[h]" : "[H]";}
+
 }
