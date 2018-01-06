@@ -3,6 +3,7 @@ package chess;
 import java.awt.Frame;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.lang.reflect.Array;
 import java.util.Scanner;
 
 class MyFrame extends Frame{
@@ -35,7 +36,8 @@ class Main {
 
 		boolean whiteTurn = true;
 
-		Pos[] p = {new Pos(2,2), new Pos(4,5)};
+		Pos[] p = chessBoard.board[1][0].possibleMoves(chessBoard);
+			System.out.println(p.toString());
 		chessBoard.highlight(p);
 		chessBoard.highlight(new Pos(6,6));
 
@@ -61,4 +63,5 @@ class Main {
 		}
 	}
 }
+
 
