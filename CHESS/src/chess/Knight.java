@@ -40,7 +40,5 @@ public class Knight extends ChessPiece{
         }
         return possibleMoves;
     }
-
-    }
     public String toString(){return isWhite ? "[h]" : "[H]";}
 }
