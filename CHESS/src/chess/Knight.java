@@ -34,11 +34,11 @@ public class Knight extends ChessPiece{
             while(valid[j]==null)j++;
             possibleMoves[i] = valid[j];
             if(board.board[valid[i].x][valid[i].y]!=null&&(board.board[valid[i].x][valid[i].y].isWhite!=isWhite)) {
-
+                board.board[valid[i].x][valid[i].y].position.hasPiece=true;
             }
 
         }
-        return new Pos[0];
+        return possibleMoves;
     }
 
     }
