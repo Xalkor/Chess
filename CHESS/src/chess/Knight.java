@@ -33,11 +33,7 @@ public class Knight extends ChessPiece{
         for(int i = 0,j = 0;i<possibleMoves.length;i++, j++) {
             while(valid[j]==null)j++;
             possibleMoves[i] = valid[j];
-            if(board.board[valid[i].x][valid[i].y]!=null&&(board.board[valid[i].x][valid[i].y].isWhite!=isWhite)) {
-                board.board[valid[i].x][valid[i].y].position.hasPiece=true;
-            }
-
-        }
+                board.board[valid[i].x][valid[i].y].position.hasPiece=board.board[valid[i].x][valid[i].y]!=null&&(board.board[valid[i].x][valid[i].y].isWhite!=isWhite);        }
         return possibleMoves;
     }
     public String toString(){return isWhite ? "[h]" : "[H]";}
